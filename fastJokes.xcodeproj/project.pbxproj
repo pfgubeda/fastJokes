@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		653A14912B752E34003D6FEC /* drunkLiarsAIPoweredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14902B752E34003D6FEC /* drunkLiarsAIPoweredApp.swift */; };
+		2B453585A6F78BB252EFCB87 /* Pods_drunkLiarsAIPowered.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */; };
+		653A14912B752E34003D6FEC /* fastJokesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14902B752E34003D6FEC /* fastJokesApp.swift */; };
 		653A14932B752E34003D6FEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14922B752E34003D6FEC /* ContentView.swift */; };
 		653A14952B752E35003D6FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A14942B752E35003D6FEC /* Assets.xcassets */; };
 		653A14982B752E35003D6FEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A14972B752E35003D6FEC /* Preview Assets.xcassets */; };
+		653A14C02B7532F9003D6FEC /* JokesSentencesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14BF2B7532F9003D6FEC /* JokesSentencesList.swift */; };
+		653A14C72B753415003D6FEC /* JokeGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14C62B753415003D6FEC /* JokeGenerationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		653A148D2B752E34003D6FEC /* drunkLiarsAIPowered.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drunkLiarsAIPowered.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		653A14902B752E34003D6FEC /* drunkLiarsAIPoweredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drunkLiarsAIPoweredApp.swift; sourceTree = "<group>"; };
+		13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drunkLiarsAIPowered.release.xcconfig"; path = "Target Support Files/Pods-drunkLiarsAIPowered/Pods-drunkLiarsAIPowered.release.xcconfig"; sourceTree = "<group>"; };
+		3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_drunkLiarsAIPowered.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drunkLiarsAIPowered.debug.xcconfig"; path = "Target Support Files/Pods-drunkLiarsAIPowered/Pods-drunkLiarsAIPowered.debug.xcconfig"; sourceTree = "<group>"; };
+		653A148D2B752E34003D6FEC /* fastJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		653A14902B752E34003D6FEC /* fastJokesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastJokesApp.swift; sourceTree = "<group>"; };
 		653A14922B752E34003D6FEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		653A14942B752E35003D6FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		653A14972B752E35003D6FEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		653A14BF2B7532F9003D6FEC /* JokesSentencesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSentencesList.swift; sourceTree = "<group>"; };
+		653A14C62B753415003D6FEC /* JokeGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B453585A6F78BB252EFCB87 /* Pods_drunkLiarsAIPowered.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,28 +44,33 @@
 		653A14842B752E34003D6FEC = {
 			isa = PBXGroup;
 			children = (
-				653A148F2B752E34003D6FEC /* drunkLiarsAIPowered */,
+				653A148F2B752E34003D6FEC /* fastJokes */,
 				653A148E2B752E34003D6FEC /* Products */,
+				FAFA61C6D83E7B7386AF4EAD /* Pods */,
+				6AC6C342E0626F643C2F961E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		653A148E2B752E34003D6FEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				653A148D2B752E34003D6FEC /* drunkLiarsAIPowered.app */,
+				653A148D2B752E34003D6FEC /* fastJokes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		653A148F2B752E34003D6FEC /* drunkLiarsAIPowered */ = {
+		653A148F2B752E34003D6FEC /* fastJokes */ = {
 			isa = PBXGroup;
 			children = (
-				653A14902B752E34003D6FEC /* drunkLiarsAIPoweredApp.swift */,
+				653A14BC2B753146003D6FEC /* models */,
+				653A14BB2B75313D003D6FEC /* views */,
+				653A14902B752E34003D6FEC /* fastJokesApp.swift */,
+				653A14C52B7533F2003D6FEC /* services */,
 				653A14922B752E34003D6FEC /* ContentView.swift */,
 				653A14942B752E35003D6FEC /* Assets.xcassets */,
 				653A14962B752E35003D6FEC /* Preview Content */,
 			);
-			path = drunkLiarsAIPowered;
+			path = fastJokes;
 			sourceTree = "<group>";
 		};
 		653A14962B752E35003D6FEC /* Preview Content */ = {
@@ -67,13 +81,54 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		653A14BB2B75313D003D6FEC /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		653A14BC2B753146003D6FEC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				653A14BF2B7532F9003D6FEC /* JokesSentencesList.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		653A14C52B7533F2003D6FEC /* services */ = {
+			isa = PBXGroup;
+			children = (
+				653A14C62B753415003D6FEC /* JokeGenerationService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		6AC6C342E0626F643C2F961E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAFA61C6D83E7B7386AF4EAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */,
+				13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		653A148C2B752E34003D6FEC /* drunkLiarsAIPowered */ = {
+		653A148C2B752E34003D6FEC /* fastJokes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 653A149B2B752E35003D6FEC /* Build configuration list for PBXNativeTarget "drunkLiarsAIPowered" */;
+			buildConfigurationList = 653A149B2B752E35003D6FEC /* Build configuration list for PBXNativeTarget "fastJokes" */;
 			buildPhases = (
+				B83E23B6E74AA2F86AE98DC0 /* [CP] Check Pods Manifest.lock */,
 				653A14892B752E34003D6FEC /* Sources */,
 				653A148A2B752E34003D6FEC /* Frameworks */,
 				653A148B2B752E34003D6FEC /* Resources */,
@@ -82,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = drunkLiarsAIPowered;
+			name = fastJokes;
 			productName = drunkLiarsAIPowered;
-			productReference = 653A148D2B752E34003D6FEC /* drunkLiarsAIPowered.app */;
+			productReference = 653A148D2B752E34003D6FEC /* fastJokes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 653A14882B752E34003D6FEC /* Build configuration list for PBXProject "drunkLiarsAIPowered" */;
+			buildConfigurationList = 653A14882B752E34003D6FEC /* Build configuration list for PBXProject "fastJokes" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +170,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				653A148C2B752E34003D6FEC /* drunkLiarsAIPowered */,
+				653A148C2B752E34003D6FEC /* fastJokes */,
 			);
 		};
 /* End PBXProject section */
@@ -132,13 +187,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B83E23B6E74AA2F86AE98DC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-drunkLiarsAIPowered-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		653A14892B752E34003D6FEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				653A14932B752E34003D6FEC /* ContentView.swift in Sources */,
-				653A14912B752E34003D6FEC /* drunkLiarsAIPoweredApp.swift in Sources */,
+				653A14912B752E34003D6FEC /* fastJokesApp.swift in Sources */,
+				653A14C02B7532F9003D6FEC /* JokesSentencesList.swift in Sources */,
+				653A14C72B753415003D6FEC /* JokeGenerationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,15 +348,18 @@
 		};
 		653A149C2B752E35003D6FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"drunkLiarsAIPowered/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"fastJokes/Preview Content\"";
 				DEVELOPMENT_TEAM = F523477C7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fast Jokes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pafego.drunkLiarsAIPowered;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafego.fastJokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -295,15 +380,18 @@
 		};
 		653A149D2B752E35003D6FEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"drunkLiarsAIPowered/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"fastJokes/Preview Content\"";
 				DEVELOPMENT_TEAM = F523477C7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fast Jokes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pafego.drunkLiarsAIPowered;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafego.fastJokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,7 +413,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		653A14882B752E34003D6FEC /* Build configuration list for PBXProject "drunkLiarsAIPowered" */ = {
+		653A14882B752E34003D6FEC /* Build configuration list for PBXProject "fastJokes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				653A14992B752E35003D6FEC /* Debug */,
@@ -334,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		653A149B2B752E35003D6FEC /* Build configuration list for PBXNativeTarget "drunkLiarsAIPowered" */ = {
+		653A149B2B752E35003D6FEC /* Build configuration list for PBXNativeTarget "fastJokes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				653A149C2B752E35003D6FEC /* Debug */,

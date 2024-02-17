@@ -1,0 +1,6 @@
+framework module Pods_fastJokes {
+  umbrella header "Pods-fastJokes-umbrella.h"
+
+  export *
+  module * { export * }
+}
