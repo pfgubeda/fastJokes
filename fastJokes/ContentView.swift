@@ -75,7 +75,10 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text("FastJokes").font(.title).bold().lineLimit(1).padding(5)
+            VStack(spacing: 0){
+                Text("Fast").font(.custom("DIN Condensed Bold", size: 30)).bold().lineLimit(1).padding([.top], 15).padding([.bottom], -15)
+                Text("Jokes").font(.custom("AmericanTypewriter", size: 38)).lineLimit(1)
+            }
             Picker("Categories", selection: $selectedCategories){
                 ForEach(AvailableCategories.allCases){
                     Text($0.title).tag($0)

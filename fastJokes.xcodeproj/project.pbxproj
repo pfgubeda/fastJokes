@@ -14,6 +14,8 @@
 		653A14982B752E35003D6FEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A14972B752E35003D6FEC /* Preview Assets.xcassets */; };
 		653A14C02B7532F9003D6FEC /* JokesSentencesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14BF2B7532F9003D6FEC /* JokesSentencesList.swift */; };
 		653A14C72B753415003D6FEC /* JokeGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14C62B753415003D6FEC /* JokeGenerationService.swift */; };
+		6594DBC42B80C9D200D5326F /* LaunchingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6594DBC32B80C9D200D5326F /* LaunchingScreen.storyboard */; };
+		6594DBC72B80CB1600D5326F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6594DBC62B80CB1600D5326F /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		653A14972B752E35003D6FEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		653A14BF2B7532F9003D6FEC /* JokesSentencesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSentencesList.swift; sourceTree = "<group>"; };
 		653A14C62B753415003D6FEC /* JokeGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerationService.swift; sourceTree = "<group>"; };
+		6594DBC32B80C9D200D5326F /* LaunchingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchingScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B453585A6F78BB252EFCB87 /* Pods_drunkLiarsAIPowered.framework in Frameworks */,
+				6594DBC72B80CB1600D5326F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 				653A14922B752E34003D6FEC /* ContentView.swift */,
 				653A14942B752E35003D6FEC /* Assets.xcassets */,
 				653A14962B752E35003D6FEC /* Preview Content */,
+				6594DBC32B80C9D200D5326F /* LaunchingScreen.storyboard */,
 			);
 			path = fastJokes;
 			sourceTree = "<group>";
@@ -138,6 +143,9 @@
 			dependencies = (
 			);
 			name = fastJokes;
+			packageProductDependencies = (
+				6594DBC62B80CB1600D5326F /* Lottie */,
+			);
 			productName = drunkLiarsAIPowered;
 			productReference = 653A148D2B752E34003D6FEC /* fastJokes.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 653A14842B752E34003D6FEC;
+			packageReferences = (
+				6594DBC52B80CB1600D5326F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 653A148E2B752E34003D6FEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653A14982B752E35003D6FEC /* Preview Assets.xcassets in Resources */,
+				6594DBC42B80C9D200D5326F /* LaunchingScreen.storyboard in Resources */,
 				653A14952B752E35003D6FEC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +375,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,6 +408,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -432,6 +446,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6594DBC52B80CB1600D5326F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6594DBC62B80CB1600D5326F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6594DBC52B80CB1600D5326F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 653A14852B752E34003D6FEC /* Project object */;
 }
