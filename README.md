@@ -12,4 +12,5 @@ FastJokes is a simple and entertaining iOS app developed using Swift UI that fet
 ## Screenshots
 *Coming soon*
 
+##
 Feel free to contribute, report issues, or suggest new features! FastJokes is here to bring laughter to your day.
