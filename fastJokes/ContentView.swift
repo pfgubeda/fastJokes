@@ -46,6 +46,35 @@ public enum AvailableCategories: String, CaseIterable, Identifiable {
     }
 }
 
+public enum AvailableLanguages: String, CaseIterable, Identifiable {
+    case En
+    case Es
+    //case Fr not supported by api
+    //case Pt not supported by api
+    case De
+    case Cs
+    
+    public var id: Self { return self }
+    var title: String{
+        switch self{
+        case .En:
+            return "English"
+        case .Es:
+            return "Spanish"
+       /* 
+        case .Fr:
+            return "French"
+        case .Pt:
+            return "Portuguese" 
+        */
+        case .De:
+            return "German"
+        case .Cs:
+            return "Czech"
+        }
+    }
+}
+
 class JokeList: ObservableObject {
     @Published var jokeSentences = [
         JokeSentence(content: "Slide to start"),
@@ -54,8 +83,8 @@ class JokeList: ObservableObject {
 
     private let jokeSentenceGenerationService = JokeSentenceService()
 
-    func addNewSentence(category : AvailableCategories) async {
-        let newJokeSentence = await jokeSentenceGenerationService.getJokeSentence(id: counter, category: category)
+    func addNewSentence(category : AvailableCategories, language: AvailableLanguages) async {
+        let newJokeSentence = await jokeSentenceGenerationService.getJokeSentence(id: counter, category: category, language: language)
         // apaño para el warining : Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates
         DispatchQueue.main.async {
             self.jokeSentences.append(newJokeSentence)
@@ -68,6 +97,7 @@ struct ContentView: View {
     @State private var swipeOffset: CGSize = .zero
     @State private var removedSentence: JokeSentence? = nil
     @State private var selectedCategories = AvailableCategories.All
+    @State private var selectedLanguage = AvailableLanguages.En
     @State private var isTitlePresented = false
     @State private var scale: CGFloat = 1.0
     @State private var offsetY: CGFloat = 0.0
@@ -79,7 +109,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
                 VStack(spacing: 0){
-                    Text("Fast").font(.custom("DIN Condensed Bold", size: 80)).bold().lineLimit(1).padding([.top], 15).padding([.bottom], -15)
+                    Text("Fast").font(.custom("DIN Condensed Bold", size: 80)).bold().lineLimit(1).padding([.top], 15).padding([.bottom], -50)
                     Text("Jokes").font(.custom("AmericanTypewriter", size: 100)).lineLimit(1)
                 }.scaleEffect(scale)
                     .offset(y: offsetY)
@@ -93,14 +123,28 @@ struct ContentView: View {
                             self.isTitlePresented = true
                         }
                     }
-                Picker("Categories", selection: $selectedCategories){
-                    ForEach(AvailableCategories.allCases){
-                        Text($0.title).tag($0)
-                    }
-                }.pickerStyle(.menu)
-                .scaleEffect(isTitlePresented ? 1:0)
-                .animation(.easeInOut, value: UUID())
-                
+            VStack(spacing: 0){
+                HStack(){
+                    Text("Category: ")
+                    Picker("Categories", selection: $selectedCategories){
+                        ForEach(AvailableCategories.allCases){
+                            Text($0.title).tag($0)
+                        }
+                    }.pickerStyle(.menu)
+                }.frame(width: 400)
+                HStack(spacing: 10){
+                    Text("Language: ")
+                    Picker("Languages", selection: $selectedLanguage){
+                        ForEach(AvailableLanguages.allCases){
+                            Text($0.title).tag($0)
+                        }
+                    }.pickerStyle(.menu)
+                }
+            }
+            .scaleEffect(isTitlePresented ? 1:0)
+            .animation(.smooth(duration: 1), value: UUID())
+           
+            
                 GeometryReader { geometry in
                     VStack(spacing: 24) {
                         ZStack {
@@ -127,7 +171,7 @@ struct ContentView: View {
                                                             removedSentence = jokeSentence
                                                             jokeList.jokeSentences.removeAll { $0.id == removedSentence?.id }
                                                             Task{
-                                                                await jokeList.addNewSentence(category: selectedCategories)
+                                                                await jokeList.addNewSentence(category: selectedCategories, language: selectedLanguage)
                                                             }
                                                             swipeOffset = .zero
                                                         }
