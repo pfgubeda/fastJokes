@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B453585A6F78BB252EFCB87 /* Pods_drunkLiarsAIPowered.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */; };
+		2D669A0AEE33B7D373B6ACA0 /* Pods_fastJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130895AEBBBB35C0305600BA /* Pods_fastJokes.framework */; };
 		653A14912B752E34003D6FEC /* fastJokesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14902B752E34003D6FEC /* fastJokesApp.swift */; };
 		653A14932B752E34003D6FEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A14922B752E34003D6FEC /* ContentView.swift */; };
 		653A14952B752E35003D6FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A14942B752E35003D6FEC /* Assets.xcassets */; };
@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drunkLiarsAIPowered.release.xcconfig"; path = "Target Support Files/Pods-drunkLiarsAIPowered/Pods-drunkLiarsAIPowered.release.xcconfig"; sourceTree = "<group>"; };
-		3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_drunkLiarsAIPowered.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drunkLiarsAIPowered.debug.xcconfig"; path = "Target Support Files/Pods-drunkLiarsAIPowered/Pods-drunkLiarsAIPowered.debug.xcconfig"; sourceTree = "<group>"; };
+		130895AEBBBB35C0305600BA /* Pods_fastJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A27B74B0C07C7C1D36C7F3 /* Pods-fastJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastJokes.release.xcconfig"; path = "Target Support Files/Pods-fastJokes/Pods-fastJokes.release.xcconfig"; sourceTree = "<group>"; };
+		4DA2D080F2AB9742A1EB2FB5 /* Pods-fastJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastJokes.debug.xcconfig"; path = "Target Support Files/Pods-fastJokes/Pods-fastJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		653A148D2B752E34003D6FEC /* fastJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A14902B752E34003D6FEC /* fastJokesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastJokesApp.swift; sourceTree = "<group>"; };
 		653A14922B752E34003D6FEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,8 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B453585A6F78BB252EFCB87 /* Pods_drunkLiarsAIPowered.framework in Frameworks */,
 				6594DBC72B80CB1600D5326F /* Lottie in Frameworks */,
+				2D669A0AEE33B7D373B6ACA0 /* Pods_fastJokes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 		6AC6C342E0626F643C2F961E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D51ABB6DE4D21542AF7E037 /* Pods_drunkLiarsAIPowered.framework */,
+				130895AEBBBB35C0305600BA /* Pods_fastJokes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,8 +120,8 @@
 		FAFA61C6D83E7B7386AF4EAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */,
-				13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */,
+				4DA2D080F2AB9742A1EB2FB5 /* Pods-fastJokes.debug.xcconfig */,
+				13A27B74B0C07C7C1D36C7F3 /* Pods-fastJokes.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-drunkLiarsAIPowered-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-fastJokes-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,7 +360,7 @@
 		};
 		653A149C2B752E35003D6FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DA2D080F2AB9742A1EB2FB5 /* Pods-drunkLiarsAIPowered.debug.xcconfig */;
+			baseConfigurationReference = 4DA2D080F2AB9742A1EB2FB5 /* Pods-fastJokes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -393,7 +393,7 @@
 		};
 		653A149D2B752E35003D6FEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13A27B74B0C07C7C1D36C7F3 /* Pods-drunkLiarsAIPowered.release.xcconfig */;
+			baseConfigurationReference = 13A27B74B0C07C7C1D36C7F3 /* Pods-fastJokes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

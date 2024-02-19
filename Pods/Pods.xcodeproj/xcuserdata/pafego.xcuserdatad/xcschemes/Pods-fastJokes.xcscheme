@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "1500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81CC0F76EBF14F3F2E665015CABD4ACE"
+               BlueprintIdentifier = "5664F8C4AFC68D81B5CE4A4CF64FC354"
                BuildableName = "Pods_fastJokes.framework"
                BlueprintName = "Pods-fastJokes"
                ReferencedContainer = "container:Pods.xcodeproj">

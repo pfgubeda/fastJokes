@@ -68,6 +68,9 @@ struct ContentView: View {
     @State private var swipeOffset: CGSize = .zero
     @State private var removedSentence: JokeSentence? = nil
     @State private var selectedCategories = AvailableCategories.All
+    @State private var isTitlePresented = false
+    @State private var scale: CGFloat = 1.0
+    @State private var offsetY: CGFloat = 0.0
     
     private var maxID: Int {
         return self.jokeList.jokeSentences.map { $0.id.hashValue }.max() ?? 0
@@ -75,60 +78,72 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            VStack(spacing: 0){
-                Text("Fast").font(.custom("DIN Condensed Bold", size: 30)).bold().lineLimit(1).padding([.top], 15).padding([.bottom], -15)
-                Text("Jokes").font(.custom("AmericanTypewriter", size: 38)).lineLimit(1)
-            }
-            Picker("Categories", selection: $selectedCategories){
-                ForEach(AvailableCategories.allCases){
-                    Text($0.title).tag($0)
-                }
-            }.pickerStyle(.menu)
-            
-            GeometryReader { geometry in
-                VStack(spacing: 24) {
-                    ZStack {
-                        ForEach(jokeList.jokeSentences.indices, id: \.self) { index in
-                            let jokeSentence = jokeList.jokeSentences[index]
-
-                            Group {
-                                if (self.maxID - 3)...self.maxID ~= jokeSentence.id.hashValue {
-                                    CardView(jokeSentence: jokeSentence, onRemove: { removedSentence in
-                                        self.removedSentence = removedSentence
-                                    })
-                                    .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0.25), value: UUID())
-                                    .frame(width: geometry.size.width - CGFloat(index) * 10, height: 400)
-                                    .offset(x: index == jokeList.jokeSentences.count - 1 ? swipeOffset.width : 0,
-                                            y: index == jokeList.jokeSentences.count - 1 ? swipeOffset.height : 0)
-                                    .gesture(
-                                        DragGesture()
-                                            .onChanged { value in
-                                                self.swipeOffset.width = value.translation.width
-                                            }
-                                            .onEnded { value in
-                                                if abs(swipeOffset.width) > 100 {
-                                                    withAnimation {
-                                                        removedSentence = jokeSentence
-                                                        jokeList.jokeSentences.removeAll { $0.id == removedSentence?.id }
-                                                        Task{
-                                                            await jokeList.addNewSentence(category: selectedCategories)
+                VStack(spacing: 0){
+                    Text("Fast").font(.custom("DIN Condensed Bold", size: 80)).bold().lineLimit(1).padding([.top], 15).padding([.bottom], -15)
+                    Text("Jokes").font(.custom("AmericanTypewriter", size: 100)).lineLimit(1)
+                }.scaleEffect(scale)
+                    .offset(y: offsetY)
+                    .onAppear {
+                        self.offsetY = 400
+                        withAnimation(.easeInOut(duration: 3.0)) {
+                            self.scale = 0.4
+                            self.offsetY = 0
+                        } completion: {
+                            // Animation completed, perform your action here
+                            self.isTitlePresented = true
+                        }
+                    }
+                Picker("Categories", selection: $selectedCategories){
+                    ForEach(AvailableCategories.allCases){
+                        Text($0.title).tag($0)
+                    }
+                }.pickerStyle(.menu)
+                .scaleEffect(isTitlePresented ? 1:0)
+                .animation(.easeInOut, value: UUID())
+                
+                GeometryReader { geometry in
+                    VStack(spacing: 24) {
+                        ZStack {
+                            ForEach(jokeList.jokeSentences.indices, id: \.self) { index in
+                                let jokeSentence = jokeList.jokeSentences[index]
+                                
+                                Group {
+                                    if (self.maxID - 3)...self.maxID ~= jokeSentence.id.hashValue {
+                                        CardView(jokeSentence: jokeSentence, onRemove: { removedSentence in
+                                            self.removedSentence = removedSentence
+                                        })
+                                        .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0.25), value: UUID())
+                                        .frame(width: geometry.size.width - CGFloat(index) * 10, height: 400)
+                                        .offset(x: index == jokeList.jokeSentences.count - 1 ? swipeOffset.width : 0,
+                                                y: index == jokeList.jokeSentences.count - 1 ? swipeOffset.height : 0)
+                                        .gesture(
+                                            DragGesture()
+                                                .onChanged { value in
+                                                    self.swipeOffset.width = value.translation.width
+                                                }
+                                                .onEnded { value in
+                                                    if abs(swipeOffset.width) > 100 {
+                                                        withAnimation {
+                                                            removedSentence = jokeSentence
+                                                            jokeList.jokeSentences.removeAll { $0.id == removedSentence?.id }
+                                                            Task{
+                                                                await jokeList.addNewSentence(category: selectedCategories)
+                                                            }
+                                                            swipeOffset = .zero
                                                         }
-                                                        swipeOffset = .zero
-                                                    }
-                                                } else {
-                                                    withAnimation {
-                                                        swipeOffset = .zero
+                                                    } else {
+                                                        withAnimation {
+                                                            swipeOffset = .zero
+                                                        }
                                                     }
                                                 }
-                                            }
-                                    )
+                                        )
+                                    }
                                 }
                             }
                         }
                     }
-                    Spacer()
-                }
-            }
+                }.scaleEffect(isTitlePresented ? 1:0).animation(.easeInOut, value: UUID())
         }
         .padding()
     }
